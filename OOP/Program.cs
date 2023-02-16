@@ -11,12 +11,30 @@
         m2.a = 2;
 
         #endregion
+        #region Property
+        MyClass myClass = new MyClass();
+        Console.WriteLine(myClass.Yasi);
+        myClass.Yasi = 3;
+        #endregion
         #endregion
     }
 }
 
 class MyClass
 {
-    public int a;
-    public string b;
+    int yasi;
+    string b;
+
+    #region Full Property
+    //Property hangi türden bir field'i temsil ediyorsa o türden olmalıdır...
+    //Propertyler temsil ettikleri fieldların isimlerinin baş harfi büyük olacak şekilde isimlendirilir.
+
+    public int Yasi
+    {
+        //Protery üzerinden değer talep edildiğinde bu blok tetiklernir.
+        //yani değer buradan gönderilir.
+        get { return yasi; }
+        set { yasi = value; }
+        #endregion
+    }
 }
